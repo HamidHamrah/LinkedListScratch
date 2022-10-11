@@ -63,9 +63,35 @@ public class LinkedList {
         Node node=new Node(verdi,current.next);
         current.next=node;
         size++;
-
-
    }
+   public int fjernførste(){
+        int val= head.value;
+        head=head.next;
+        if (head==null){
+            tail=null;
+        }
+        size--;
+        return val;
+   }
+   public Node getRef(int indeks){
+        Node current=head;
+       for (int i = 0; i <indeks ; i++) {
+           current=current.next;
+       }
+       return current;
+   }
+   public int fjernesiste(){
+         if (size<=1){
+             return fjernførste();
+         }
+         Node secondelast=getRef(size-2);
+         int val=tail.value;
+         tail=secondelast;
+         tail.next=null;
+        return val;
+   }
+
+
    public void print(){
         Node current=head;
         while (current!=null){

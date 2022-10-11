@@ -7,7 +7,9 @@ public class main {
         list.InsertFørst(1);
         list.InsertLast(6);
         list.InsertLast(7);
-        list.Insert(1,3);
+        list.Insert(1,2);
+        list.print();
+        System.out.println(list.fjernesiste()+" Er fjernet");
         list.print();
 
 
