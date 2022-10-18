@@ -1,9 +1,9 @@
-public class LinkedList {
+public class SingelLinkedList {
     private Node head;
     private Node tail;
     private int size;
 
-    public LinkedList() {
+    public SingelLinkedList() {
         this.size = 0;
     }
 
@@ -28,7 +28,7 @@ public class LinkedList {
        }
 
     }
-   public  void InsertFørst(int verdi){
+   public  void InsertFørst(Integer verdi){
         Node current=new Node(verdi);
         current.next=head;
         head=current;
@@ -37,7 +37,7 @@ public class LinkedList {
         }
         size++;
    }
-   public void InsertLast(int verdi){
+   public void InsertLast(Integer verdi){
         if (tail==null){
             InsertFørst(verdi);
             return;
@@ -90,14 +90,38 @@ public class LinkedList {
          tail.next=null;
         return val;
    }
+    public int fjernet(int indeks){
+        if (indeks<=1){
+            return fjernførste();
+        }
+        if (indeks==size){
+            return fjernesiste();
+        }
+        Node curret=head;
+        Node prev=getRef(indeks-1);
+        int val=prev.next.value;
+        prev.next=prev.next.next;
+        return val;
+    }
+    public Node find(int value){
+        Node current=head;
+        while (current!=null){
+            if (current.value==value){
+                return current;
+            }
+        }
+        current=current.next;
+        return null;
+    }
 
 
    public void print(){
         Node current=head;
-        while (current!=null){
-            System.out.print(current.value+" -->");
-            current=current.next;
-        }
+       for (int i=0; i<size; i++){
+           System.out.print(current.value+"-->");
+           current=current.next;
+       }
+
        System.out.println("End");
    }
 

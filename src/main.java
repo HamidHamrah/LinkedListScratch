@@ -1,18 +1,14 @@
 public class main {
     public static void main(String[] args) {
-    LinkedList list= new LinkedList();
-        list.InsertFørst(5);
-        list.InsertFørst(4);
-        list.InsertFørst(3);
-        list.InsertFørst(1);
-        list.InsertLast(6);
-        list.InsertLast(7);
-        list.Insert(1,2);
-        list.print();
-        System.out.println(list.fjernesiste()+" Er fjernet");
-        list.print();
+       DlinkedList list2=new DlinkedList();
+
+        list2.insertLast(6);
+        list2.insertLast(5);
+        list2.insertLast(4);
+        list2.insertFørst(7);
 
 
+        list2.Print();
     }
 }
 
